@@ -19,4 +19,4 @@ If you'd like persistance, you can create a volume for that purpose:
     $ docker volume create cmsmadesimple_web
     $ docker run -d -p 80:80 --name cmsmadesimple --link mysqlcms:mysql -v cmsmadesimple_web:/var/www/html mablanco/cmsmadesimple
 
-Once the container is running for the first time, navigate to `/cmsms-2.2.8-install.php` to be redirected to the upgrade and install scripts.
+Once the container is running for the first time, navigate to `/cmsms-<version>-install.php` to be redirected to the upgrade and install scripts.

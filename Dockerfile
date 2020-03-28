@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/{apt,dpkg,cache,log}
 COPY limits.ini $PHP_INI_DIR/conf.d/
-RUN curl -LO http://s3.amazonaws.com/cmsms/downloads/14202/cmsms-$CMSMADESIMPLE_VERSION-install.zip && \
+RUN curl -s -LO http://s3.amazonaws.com/cmsms/downloads/14202/cmsms-$CMSMADESIMPLE_VERSION-install.zip && \
     unzip cmsms-$CMSMADESIMPLE_VERSION-install.zip && \
     rm -r cmsms-$CMSMADESIMPLE_VERSION-install.zip && \
     mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini && \

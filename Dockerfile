@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.4.4-apache-buster
 WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get -y install curl zip libzip-dev libgd-dev && \
@@ -10,7 +10,7 @@ RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 COPY limits.ini $PHP_INI_DIR/conf.d/
 RUN docker-php-ext-install -j$(nproc) mysqli
 RUN docker-php-ext-install -j$(nproc) gd
-RUN docker-php-ext-configure zip --with-libzip && \
+RUN docker-php-ext-configure zip && \
     docker-php-ext-install -j$(nproc) zip
 RUN docker-php-ext-install -j$(nproc) opcache
 RUN a2enmod rewrite

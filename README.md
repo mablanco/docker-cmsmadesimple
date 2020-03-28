@@ -6,7 +6,7 @@ This image sets up a development environment and relies on Debian Linux, Apache 
 
 ## How to use this image
 
-CMS Made Simple requires a MySQL DB as backend. You can launch a dockerized one with the following command (change paswords accordingly):
+CMS Made Simple requires a MySQL DB as backend. You can launch a dockerized one with the following command (change passwords accordingly):
 
     $ docker run --name mysqlcms -e MYSQL_ROOT_PASSWORD=<root_password> -e MYSQL_DATABASE=cmsmadesimpledb -e MYSQL_USER=cmsmadesimple -e MYSQL_PASSWORD=<user_password> -d mysql:5.7
 

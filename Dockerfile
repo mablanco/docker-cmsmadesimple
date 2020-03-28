@@ -1,11 +1,12 @@
 FROM php:7.4.4-apache-buster
+ARG CMSMADESIMPLE_VERSION=2.2.8
 WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get -y install curl zip libzip-dev libgd-dev && \
     apt-get clean
-RUN curl -LO http://s3.amazonaws.com/cmsms/downloads/14202/cmsms-2.2.8-install.zip && \
-    unzip cmsms-2.2.8-install.zip && \
-    rm -r cmsms-2.2.8-install.zip
+RUN curl -LO http://s3.amazonaws.com/cmsms/downloads/14202/cmsms-$CMSMADESIMPLE_VERSION-install.zip && \
+    unzip cmsms-$CMSMADESIMPLE_VERSION-install.zip && \
+    rm -r cmsms-$CMSMADESIMPLE_VERSION-install.zip
 RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
 COPY limits.ini $PHP_INI_DIR/conf.d/
 RUN docker-php-ext-install -j$(nproc) mysqli

@@ -1,5 +1,5 @@
 FROM php:7.4.4-apache-buster
-ARG CMSMADESIMPLE_VERSION=2.2.8
+ARG CMSMADESIMPLE_VERSION=2.2.13
 WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get -y install curl zip libzip-dev libgd-dev && \

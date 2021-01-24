@@ -1,6 +1,6 @@
-FROM php:7.4.4-apache-buster
+FROM php:7.4.9-apache-buster
 ENV DEBIAN_FRONTEND noninteractive
-ARG CMSMADESIMPLE_VERSION=2.2.13
+ARG CMSMADESIMPLE_VERSION=2.2.15
 WORKDIR /var/www/html
 RUN apt-get update && \
     apt-get -y install curl zip libzip-dev libgd-dev && \
